@@ -4,12 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 
-function register() {
+function Register() {
 
   const [userData, setUserdata] = useState({
     username: "",
     email: "",
-    password: "",
+    password: '',
   });
   const [isUserCreated,setisUserCreated] = useState(false)
   const [Error,setError] = useState({error:false,message:''})
@@ -33,7 +33,7 @@ function register() {
         setUserdata({
           username: "",
           email: "",
-          password: "",
+          password: '',
         })
       }else{
         const {error} = await res.json()
@@ -99,4 +99,4 @@ function register() {
   );
 }
 
-export default register;
+export default Register;

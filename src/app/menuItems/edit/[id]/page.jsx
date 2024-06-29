@@ -9,7 +9,7 @@ import { useParams, useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import toast from 'react-hot-toast'
 
-function page() {
+function Page() {
     const router = useRouter()
     const {loading,data} = UseProfile();
     const [MenuItem,setMenuItem] = useState(null)
@@ -77,4 +77,4 @@ const handleDelete = (id)=>{
   )
 }
 
-export default page
+export default Page

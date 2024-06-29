@@ -9,7 +9,7 @@ import Link from 'next/link'
 import { redirect } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 
-function page() {
+function Page() {
     const {loading , data} = UseProfile()
     const [menuItems ,setMenuItems] = useState(null)
     const {status} = useSession();
@@ -54,4 +54,4 @@ function page() {
   )
 }
 
-export default page
+export default Page

@@ -6,7 +6,7 @@ import Image from "next/image";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
-function page() {
+function Page() {
   const dispatch = useAppDispatch();
   const params = useParams();
   const [order, setOrder] = useState();
@@ -87,8 +87,8 @@ function page() {
           </div>
           <div className=" flex flex-col gap-4">
             {order?.products &&
-              order?.products.map((product) => (
-                <div className=" flex p-2 gap-4 items-start justify-between border-b-2 border-b-gray-100">
+              order?.products.map((product,index) => (
+                <div className=" flex p-2 gap-4 items-start justify-between border-b-2 border-b-gray-100" key={index}>
                   <div className=" flex gap-4 items-center">
                     <Image
                       src={product?.image}
@@ -105,8 +105,8 @@ function page() {
                       {product?.extraIngredients?.length > 0 && 
                       <p>
                     Extra Ingredients 
-                    { product?.extraIngredients.map((extra)=>(
-                        <span className="text-slate-400 text-sm">
+                    { product?.extraIngredients.map((extra,index)=>(
+                        <span className="text-slate-400 text-sm" key={index}>
                           {" "+ extra?.name} ${extra?.price} | 
                        </span>
                      ))}
@@ -147,4 +147,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

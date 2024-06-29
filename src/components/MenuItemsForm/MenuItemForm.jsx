@@ -53,9 +53,9 @@ function MenuItemForm({handleSubmit,MenuItem,handleDelete}) {
          <select value={category} onChange={(ev)=>setCategory(ev.target.value)} >
           <option value="">-- select Category --</option>
           {categories && 
-          categories.map((c)=>{
+          categories.map((c,index)=>{
             return(
-              <option value={c._id}>{c.name}</option>
+              <option value={c._id} key={index}>{c.name}</option>
             )
           })
           }

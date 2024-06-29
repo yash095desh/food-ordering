@@ -30,7 +30,7 @@ function MenuItemsProps({props,setProps,name}) {
      {props?.length>0 && 
       props.map((prop,index)=>{
         return (
-        <div className='flex gap-2 items-end my-1'>
+        <div className='flex gap-2 items-end my-1' key={index} >
         <div className='flex flex-col '>
           <label>Name</label>
           <input type="text"

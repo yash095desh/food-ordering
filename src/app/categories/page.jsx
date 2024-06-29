@@ -8,7 +8,7 @@ import { redirect } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
- function page() {
+ function Page() {
   const [category, setCategory] = useState("");
   const [categories, setCategories] = useState("");
   const [updatingCategory, setUpdatingCategory] = useState(null);
@@ -127,9 +127,10 @@ import toast from "react-hot-toast";
           <>
             <label> Edit Categories </label>
             <div className=" flex flex-col gap-2">
-              {categories.map((category) => {
+              {categories.map((category,index) => {
                 return (
                   <div
+                  key={index}
                     className={` px-2 rounded-md border-gray-400 border flex justify-between items-center ${
                       updatingCategory?._id == category._id
                         ? "bg-gray-300"
@@ -161,4 +162,4 @@ import toast from "react-hot-toast";
   );
 }
 
-export default page;
+export default Page;

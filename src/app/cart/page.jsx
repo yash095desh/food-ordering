@@ -8,7 +8,7 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
-function page() {
+function Page() {
     const {loading,data:profileData} = UseProfile()
     const [User ,setUser] = useState(null)
     const products = useAppSelector((state) => state.User.User.products);
@@ -100,7 +100,7 @@ function page() {
         <div className=" flex flex-col gap-2 flex-1" >
         {products?.length>0 &&
             products.map((item,index)=>(
-            <div className=" flex border-b-gray-200 border-b-2 p-2 rounded-md items-center justify-between " >
+            <div className=" flex border-b-gray-200 border-b-2 p-2 rounded-md items-center justify-between " key={index} >
                 <div className=" flex gap-4">
                     <Image alt="Image" src={item?.image} width={100} height={50}/>
                     <div className=" flex flex-col gap-1 justify-center" >
@@ -109,8 +109,8 @@ function page() {
                             Size : {item.sizes.length>0 ? `${item?.size?.name} $ ${item?.size?.price} ` : 'Regular' }
                         </p>
                         {item?.extraIngredients &&
-                            item.extraIngredients.map((extra)=>(
-                                <p className=" text-slate-500" >Extra {extra?.name} ${extra?.price} </p>
+                            item.extraIngredients.map((extra,index)=>(
+                                <p className=" text-slate-500" key={index} >Extra {extra?.name} ${extra?.price} </p>
                             ))
                         }
                     </div>
@@ -190,4 +190,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

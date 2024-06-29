@@ -9,7 +9,7 @@ import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'
 import toast from 'react-hot-toast'
 
-function page() {
+function Page() {
     const router = useRouter()
     const {loading,data} = UseProfile();
 
@@ -50,4 +50,4 @@ const handleSubmit = async(ev,image,name,category,description,basePrice,sizes,ex
   )
 }
 
-export default page
+export default Page

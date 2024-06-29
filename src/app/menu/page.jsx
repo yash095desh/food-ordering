@@ -3,7 +3,7 @@ import MenuCard from '@/components/MenuCard/MenuCard';
 import SectionHeading from '@/components/Sectionheading/SectionHeading';
 import React, { useEffect, useState } from 'react'
 
-function page() {
+function Page() {
     const [categories,setcategories] = useState();
     const [menuItems,setMenuItems] = useState();
 
@@ -20,8 +20,8 @@ function page() {
                 <SectionHeading subheading={category.name} className=""/>
                 <div className=' flex flex-wrap gap-4 justify-around'>
                     {menuItems?.length && 
-                    menuItems.filter((item)=>category._id === item.category ).map((item)=>(
-                        <MenuCard item={item}/>
+                    menuItems.filter((item)=>category._id === item.category ).map((item,index)=>(
+                        <MenuCard item={item} key={index}/>
                     ))
                     }
                 </div>
@@ -33,4 +33,4 @@ function page() {
   )
 }
 
-export default page
+export default Page

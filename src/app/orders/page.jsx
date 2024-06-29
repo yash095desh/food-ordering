@@ -4,7 +4,7 @@ import UseProfile from "@/components/UseProfile";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
-function page() {
+function Page() {
   const [orders, setOrders] = useState(null);
   const { loading, data } = UseProfile();
 
@@ -49,8 +49,8 @@ function page() {
                 <h1 className=" text-lg font-medium">{order?.email}</h1>
                 <p>
                   {order?.products?.length > 0 &&
-                    order?.products.map((product) => (
-                      <span className="text-slate-400 text-sm">
+                    order?.products.map((product,index) => (
+                      <span className="text-slate-400 text-sm" key={index}>
                         {" " + product?.name} ,{" "}
                       </span>
                     ))}
@@ -87,4 +87,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

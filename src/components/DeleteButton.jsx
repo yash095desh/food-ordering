@@ -9,7 +9,7 @@ function DeleteButton({ handleDelete, id ,name}) {
     return (
       <div className=" fixed flex justify-center items-center h-full inset-0 bg-black/80">
         <div className=" px-8 py-6 border border-gray-400 bg-white flex flex-col gap-4 items-center justify-center rounded-md">
-          <p className=" text-lg text-gray-600">Press 'Confirm' to delete</p>
+          <p className=" text-lg text-gray-600">Press Confirm to delete</p>
           <div className=" flex gap-4">
             <button
               className=" p-1 px-2 rounded-md border border-gray-400 bg-primary text-white"

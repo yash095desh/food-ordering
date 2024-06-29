@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, {  useState } from "react";
 
-function login() {
+function LoginPage() {
     
 const [userData, setUserdata] = useState({
     email: "",
@@ -74,10 +74,10 @@ const router = useRouter()
           <Image src={"/google.png"} width={32} height={32} alt="google logo" />
           Login with google
         </button>
-        <p className="text-center text-gray-600"> Don't  have Account ? <Link href={'/register'} className="font-bold underline" >Register &raquo;</Link> </p>
+        <p className="text-center text-gray-600"> Don `&apos;` t  have Account ? <Link href={'/register'} className="font-bold underline" >Register &raquo;</Link> </p>
       </form>
     </section>
   )
 }
 
-export default login
+export default LoginPage

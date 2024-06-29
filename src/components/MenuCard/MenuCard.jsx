@@ -81,8 +81,8 @@ function MenuCard({ item }) {
             <div className=" flex flex-col gap-2 ">
               <h3 className="text-xl font-bold">Sizes</h3>
               {item?.sizes.length > 0 &&
-                item?.sizes.map((size) => (
-                  <label className=" py-3 px-6 border text-lg border-gray-600 flex gap-2 rounded-md  ">
+                item?.sizes.map((size,index) => (
+                  <label key={index} className=" py-3 px-6 border text-lg border-gray-600 flex gap-2 rounded-md  ">
                     <input
                       type="radio"
                       name="size"
@@ -96,8 +96,8 @@ function MenuCard({ item }) {
             <div className=" flex flex-col gap-2 ">
               <h3 className="text-xl font-bold">Extra Ingredients</h3>
               {item?.extraIngredients?.length > 0 &&
-                item?.extraIngredients.map((extra) => (
-                  <label className=" py-3 px-6 border text-lg border-gray-600 flex gap-2 rounded-md  ">
+                item?.extraIngredients.map((extra,index) => (
+                  <label className=" py-3 px-6 border text-lg border-gray-600 flex gap-2 rounded-md  " key={index}>
                     <input
                       type="checkbox"
                       checked={selectedExtra
