@@ -2,32 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+select,
+ input{
+  @apply p-2 bg-gray-100 rounded-md outline-none disabled:opacity-50  border-gray-400 border
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+div.profile-input > input {
+  @apply mb-2 
 }
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+label{
+  @apply text-sm text-slate-400 leading-tight
 }
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+div.tabs > * {
+    @apply  bg-gray-200 px-8 py-[10px]  rounded-md font-medium 
+}
+div.tabs > *.active{
+  @apply bg-primary text-white
 }
