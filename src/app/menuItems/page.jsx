@@ -1,7 +1,8 @@
 'use client'
 import ProfileTabs from '@/components/ProfileTabs/ProfileTabs'
 import UseProfile from '@/components/UseProfile'
-import Right from '@/components/icons/right'
+import Right from '@/components/icons/Right'
+
 import { useSession } from 'next-auth/react'
 import Image from 'next/image'
 import Link from 'next/link'
